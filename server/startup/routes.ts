@@ -1,10 +1,11 @@
-const express = require("express");
-const cors = require("cors");
+import express from "express";
+import cors from "cors";
 
 const users = require("../routes/user");
 const home = require("../routes/home");
 
-module.exports = function (app) {
+
+module.exports = function (app: any) {
   app.use(express.json());
   app.use(cors());
   app.use(express.urlencoded({ extended: true })); // to loges the reqest into terminal

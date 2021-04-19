@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 const router = express.Router();
 
 // type Params2 = {
@@ -11,7 +11,7 @@ const router = express.Router();
 //   b: number;
 // }
 
-router.get("/", async (req, res) => {
+router.get("/", async (req: Request, res: Response) => {
   res.send({ users: "krishna" });
 });
 

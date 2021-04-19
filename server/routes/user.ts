@@ -11,8 +11,9 @@ const router = express.Router();
 //   b: number;
 // }
 
-router.get("/", async (req: Request, res: Response) => {
-  res.send({ users: "krishna" });
+router.get("/", (req: Request, res: Response): void => {
+  const name: object = { users: "krishna" };
+  res.send(name);
 });
 
 module.exports = router;

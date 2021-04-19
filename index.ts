@@ -11,4 +11,4 @@ app.set("view engine", "pug");
 app.set("views", "./server/views"); // to set default template
 
 const port = process.env.PORT || config.get("PORT");
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+app.listen(port, (): void => console.log(`Listening on port ${port}...`));

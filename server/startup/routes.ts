@@ -1,9 +1,8 @@
 import express from "express";
 import cors from "cors";
 
-const users = require("../routes/user");
+const movies = require("../routes/movies");
 const home = require("../routes/home");
-
 
 module.exports = function (app: any) {
   app.use(express.json());
@@ -11,6 +10,6 @@ module.exports = function (app: any) {
   app.use(express.urlencoded({ extended: true })); // to loges the reqest into terminal
   // app.use(express.static("")); // to server static content
   // routes setup
-  app.use("/api/users", users);
+  app.use("/api/movies", movies);
   app.use("/", home);
 };

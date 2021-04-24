@@ -21,6 +21,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
+require("./server/startup/db")();
 require("./server/startup/routes")(app);
 require("./server/startup/prod")(app);
 

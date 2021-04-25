@@ -3,7 +3,11 @@ import express, { Application, NextFunction, Request, Response } from "express";
 import config from "config";
 
 const app: Application = express();
-
+app.set("etag", false);
+app.use((req, res, next) => {
+  res.set("Cache-Control", "no-store");
+  next();
+});
 // Rules of API
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.header("Access-Control-Allow-Origin", "*");

@@ -13,4 +13,18 @@ router.get("/", async (req: Request, res: Response) => {
   }
 });
 
+router.post("/", async (req: Request, res: Response) => {
+  const movie = new Movies({
+    backgroundImg: req.body.backgroundImg,
+    cardImg: req.body.backgroundImg,
+    description: req.body.description,
+    type: req.body.type,
+    subTitle: req.body.subTitle,
+    titleImg: req.body.backgroundImg,
+    title: req.body.title,
+  });
+  await movie.save();
+  res.send(movie);
+});
+
 module.exports = router;
